@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace PerpetualResidentDreamLarvaEpidemic
 {
-    [BepInPlugin(Id, DisplayName, "0.3.1")]
+    [BepInPlugin(Id, DisplayName, "0.3.2")]
     public sealed class PerpetualResidentDreamLarvaEpidemicPlugin : BaseUnityPlugin
     {
         // Default for generated JSON and fallback when the configured ID cannot be used.
@@ -47,7 +47,7 @@ namespace PerpetualResidentDreamLarvaEpidemic
             SupplyEnabled.SettingChanged += (_, __) => { clock.Reset(); SupplyError = null; itemValidated = false; };
             harmony = new Harmony(Id);
             harmony.PatchAll(typeof(PerpetualResidentDreamLarvaEpidemicPlugin).Assembly);
-            Logger.LogInfo(DisplayName + " 0.3.1 loaded. Item inventory replenishment only.");
+            Logger.LogInfo(DisplayName + " 0.3.2 loaded. Item inventory replenishment only.");
         }
 
         private void Update()

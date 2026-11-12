@@ -1,5 +1,13 @@
 # Change notes
 
+## 0.3.2 — 2026-11-12
+
+Lowered the character-sheet tabs another 5 screen pixels, for 10 pixels total. No gameplay or saved-setting changes.
+
+キャラクターシートのタブをさらに5ピクセル、合計10ピクセル下げました。ゲーム内の動作や保存済み設定に変更はありません。
+
+角色面板标签栏再下移5个屏幕像素，总计10像素。游戏功能和已保存设置未变。
+
 ## 0.3.1 — 2026-11-12
 
 Added Japanese and Simplified Chinese settings, dialogs, tooltips, and status messages. The UI follows Elin's selected language automatically. No gameplay changes.

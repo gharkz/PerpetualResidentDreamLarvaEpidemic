@@ -9,4 +9,4 @@ dotnet run --project tests/PerpetualResidentDreamLarvaEpidemicChecks.csproj -c R
 
 Copy the DLL, package.xml, and preview.jpg from dist/PerpetualResidentDreamLarvaEpidemic into Elin/Package/PerpetualResidentDreamLarvaEpidemic.
 
-The package version is Elin compatibility (0.23.355). The mod release is 0.3.0.
+The package version is Elin compatibility (0.23.355). The mod release is 0.3.2.

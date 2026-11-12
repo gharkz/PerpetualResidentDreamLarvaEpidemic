@@ -80,7 +80,7 @@ namespace PerpetualResidentDreamLarvaEpidemic
             var rect = __instance.rectTab;
             if (state.TabOffsetApplied && rect.anchoredPosition == state.TabPosition) return;
             float scale = Mathf.Max(0.01f, Mathf.Abs(rect.lossyScale.y));
-            rect.anchoredPosition += Vector2.down * (5f / scale);
+            rect.anchoredPosition += Vector2.down * (10f / scale);
             state.TabPosition = rect.anchoredPosition;
             state.TabOffsetApplied = true;
         }
