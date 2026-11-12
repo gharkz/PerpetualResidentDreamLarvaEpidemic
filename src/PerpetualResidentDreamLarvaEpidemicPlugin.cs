@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace PerpetualResidentDreamLarvaEpidemic
 {
-    [BepInPlugin(Id, DisplayName, "0.3.0")]
+    [BepInPlugin(Id, DisplayName, "0.3.1")]
     public sealed class PerpetualResidentDreamLarvaEpidemicPlugin : BaseUnityPlugin
     {
         // Default for generated JSON and fallback when the configured ID cannot be used.
@@ -47,7 +47,7 @@ namespace PerpetualResidentDreamLarvaEpidemic
             SupplyEnabled.SettingChanged += (_, __) => { clock.Reset(); SupplyError = null; itemValidated = false; };
             harmony = new Harmony(Id);
             harmony.PatchAll(typeof(PerpetualResidentDreamLarvaEpidemicPlugin).Assembly);
-            Logger.LogInfo(DisplayName + " 0.3.0 loaded. Item inventory replenishment only.");
+            Logger.LogInfo(DisplayName + " 0.3.1 loaded. Item inventory replenishment only.");
         }
 
         private void Update()
@@ -82,7 +82,8 @@ namespace PerpetualResidentDreamLarvaEpidemic
             var config = new ItemConfig { ItemId = itemId, ItemCount = itemCount, IncludePartyAllies = includePartyAllies };
             if (!ItemConfig.TrySave(ItemConfigPath, config, out var error))
             {
-                SettingsMessage = error;
+                Logger.LogWarning(error);
+                SettingsMessage = "Could not save settings. Settings unchanged. See BepInEx log.";
                 return false;
             }
             ItemId = itemId;
@@ -171,8 +172,8 @@ namespace PerpetualResidentDreamLarvaEpidemic
                 }
                 if (string.IsNullOrWhiteSpace(ItemId) || !EClass.sources.things.map.ContainsKey(ItemId))
                 {
-                    SupplyError = "Unknown item ID: " + ItemId + ". Replenishment is paused.";
-                    Logger.LogError(SupplyError);
+                    SupplyError = "Unknown item ID. Replenishment is paused.";
+                    Logger.LogError(SupplyError + " ID: " + ItemId);
                     return;
                 }
                 itemValidated = true;

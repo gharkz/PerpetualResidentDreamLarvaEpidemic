@@ -5,6 +5,7 @@
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="../src/UiText.cs" Link="UiText.cs" />
     <Compile Include="../src/ItemConfig.cs" Link="ItemConfig.cs" />
     <Compile Include="../src/WorkItemPolicy.cs" Link="WorkItemPolicy.cs" />
     <Compile Include="../src/ReplenishmentClock.cs" Link="ReplenishmentClock.cs" />

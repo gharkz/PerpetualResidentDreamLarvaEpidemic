@@ -8,11 +8,13 @@ namespace PerpetualResidentDreamLarvaEpidemic
     [HarmonyPatch]
     internal static class PerpetualResidentDreamLarvaEpidemicTab
     {
+        private static string T(string text) => UiText.Get(Lang.langCode, text);
         private const string TabId = "PerpetualResidentDreamLarvaEpidemic";
         private sealed class State
         {
             internal Window.Setting.Tab Tab;
             internal UIText Count;
+            internal string Language;
             internal LayoutElement Width;
             internal bool AddedWidth;
             internal float MinWidth, PreferredWidth, FlexibleWidth;
@@ -64,7 +66,7 @@ namespace PerpetualResidentDreamLarvaEpidemic
         private static void LabelTab(Window __instance)
         {
             var state = GetState(__instance);
-            if (state != null && state.Tab.button) state.Tab.button.mainText.text = "Epidemic Config";
+            if (state != null && state.Tab.button) state.Tab.button.mainText.text = T("Epidemic Config");
             LowerTabBar(__instance);
         }
 
@@ -132,24 +134,26 @@ namespace PerpetualResidentDreamLarvaEpidemic
                 return true;
             }
             __instance.contentList.DestroyChildren();
+            state.Language = Lang.langCode;
+            if (state.Tab.button) state.Tab.button.mainText.text = T("Epidemic Config");
             var note = __instance.note;
             note.Clear();
             note.transform.SetAsLastSibling();
-            note.AddHeader(PerpetualResidentDreamLarvaEpidemicPlugin.DisplayName);
-            note.AddText("Keeps your chosen item topped up. Choose how many each person gets below.");
-            AddCheckbox(note, "Enable item replenishment", PerpetualResidentDreamLarvaEpidemicPlugin.Instance.SupplyEnabled, __instance);
+            note.AddHeader(T(PerpetualResidentDreamLarvaEpidemicPlugin.DisplayName));
+            note.AddText(T("Keeps your chosen item topped up. Choose how many each person gets below."));
+            AddCheckbox(note, T("Enable item replenishment"), PerpetualResidentDreamLarvaEpidemicPlugin.Instance.SupplyEnabled, __instance);
             var plugin = PerpetualResidentDreamLarvaEpidemicPlugin.Instance;
-            note.AddHeader("Item settings");
-            note.AddText("Changes apply now and save automatically. Existing extras stay in your bags.");
-            note.AddButton("Item ID: " + plugin.ItemId, () =>
-                Dialog.InputName("Item ID", plugin.ItemId, (cancel, value) =>
+            note.AddHeader(T("Item settings"));
+            note.AddText(T("Changes apply now and save automatically. Existing extras stay in your bags."));
+            note.AddButton(T("Item ID: ") + plugin.ItemId, () =>
+                Dialog.InputName(T("Item ID"), plugin.ItemId, (cancel, value) =>
                 {
                     if (cancel) return;
                     plugin.ApplyItemSettings(value, plugin.ItemCount, plugin.IncludePartyAllies);
                     Refresh(__instance);
                 }));
-            note.AddButton("Item count: " + plugin.ItemCount, () =>
-                Dialog.InputName("Item count (1–2147483647)", plugin.ItemCount.ToString(), (cancel, value) =>
+            note.AddButton(T("Item count: ") + plugin.ItemCount, () =>
+                Dialog.InputName(T("Item count (1–2147483647)"), plugin.ItemCount.ToString(), (cancel, value) =>
                 {
                     if (cancel) return;
                     if (!int.TryParse(value, out var count) || count < 1)
@@ -162,18 +166,18 @@ namespace PerpetualResidentDreamLarvaEpidemic
                 plugin.ApplyItemSettings(plugin.ItemId, plugin.ItemCount, value);
                 Refresh(__instance);
             });
-            partyToggle.mainText.text = "Also supply party allies";
-            note.AddHeader("Recipients");
-            note.AddText("Choose who gets items. These choices also apply to party allies. Guests and livestock are excluded.");
+            partyToggle.mainText.text = T("Also supply party allies");
+            note.AddHeader(T("Recipients"));
+            note.AddText(T("Choose who gets items. These choices also apply to party allies. Guests and livestock are excluded."));
             note.Space();
-            AddCheckbox(note, "Female", PerpetualResidentDreamLarvaEpidemicPlugin.Instance.Female, __instance);
-            AddCheckbox(note, "Male", PerpetualResidentDreamLarvaEpidemicPlugin.Instance.Male, __instance);
-            AddCheckbox(note, "???", PerpetualResidentDreamLarvaEpidemicPlugin.Instance.Unknown, __instance);
+            AddCheckbox(note, T("Female"), PerpetualResidentDreamLarvaEpidemicPlugin.Instance.Female, __instance);
+            AddCheckbox(note, T("Male"), PerpetualResidentDreamLarvaEpidemicPlugin.Instance.Male, __instance);
+            AddCheckbox(note, T("???"), PerpetualResidentDreamLarvaEpidemicPlugin.Instance.Unknown, __instance);
             note.Space();
-            AddCheckbox(note, "Also supply the player", PerpetualResidentDreamLarvaEpidemicPlugin.Instance.IncludePlayer, __instance);
-            note.AddText("Use Allow item replenishment on the resident board to opt individuals out, including while in your party. Those choices are saved per world.");
-            note.AddText("Existing matching items count, including accessible carried bags. Uses normal stacking. If no stack or free slot is available, quietly skips that recipient. Existing extras are never removed.");
-            note.AddText("Disabling stops replenishment. Ordinary items already supplied remain in your save.");
+            AddCheckbox(note, T("Also supply the player"), PerpetualResidentDreamLarvaEpidemicPlugin.Instance.IncludePlayer, __instance);
+            note.AddText(T("Use Allow item replenishment on the resident board to opt individuals out, including while in your party. Those choices are saved per world."));
+            note.AddText(T("Existing matching items count, including accessible carried bags. Uses normal stacking. If no stack or free slot is available, quietly skips that recipient. Existing extras are never removed."));
+            note.AddText(T("Disabling stops replenishment. Ordinary items already supplied remain in your save."));
             state.Count = note.AddText("").text1;
 
             UpdateCount(__instance);
@@ -340,6 +344,11 @@ namespace PerpetualResidentDreamLarvaEpidemic
         {
             var state = GetState(sheet.window);
             if (state == null || !state.Count || PerpetualResidentDreamLarvaEpidemicPlugin.Instance == null) return;
+            if (state.Language != Lang.langCode && IsSelected(sheet))
+            {
+                Refresh(sheet);
+                return;
+            }
             if (state.LayoutActive && IsSelected(sheet))
             {
                 var viewport = sheet.scrollSkill.viewport ? sheet.scrollSkill.viewport : sheet.scrollSkill.GetComponent<RectTransform>();
@@ -350,10 +359,10 @@ namespace PerpetualResidentDreamLarvaEpidemic
                     sheet.scrollSkill.Refresh();
                 }
             }
-            state.Count.text = "Eligible recipients here (including player): " + PerpetualResidentDreamLarvaEpidemicPlugin.Instance.CountRecipients() +
-                "\nItem replenishment: " + (PerpetualResidentDreamLarvaEpidemicPlugin.Instance.SupplyEnabled.Value ? "On" : "Off") +
-                "\n" + (PerpetualResidentDreamLarvaEpidemicPlugin.Instance.SettingsMessage ?? "") +
-                (PerpetualResidentDreamLarvaEpidemicPlugin.Instance.SupplyError == null ? "" : "\n" + PerpetualResidentDreamLarvaEpidemicPlugin.Instance.SupplyError);
+            state.Count.text = T("Eligible recipients here (including player): ") + PerpetualResidentDreamLarvaEpidemicPlugin.Instance.CountRecipients() +
+                "\n" + T("Item replenishment: ") + (PerpetualResidentDreamLarvaEpidemicPlugin.Instance.SupplyEnabled.Value ? T("On") : T("Off")) +
+                "\n" + T(PerpetualResidentDreamLarvaEpidemicPlugin.Instance.SettingsMessage) +
+                (PerpetualResidentDreamLarvaEpidemicPlugin.Instance.SupplyError == null ? "" : "\n" + T(PerpetualResidentDreamLarvaEpidemicPlugin.Instance.SupplyError));
         }
     }
 }

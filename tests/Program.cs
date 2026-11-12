@@ -116,4 +116,15 @@ Assert(WorkItemPolicy.MissingCount(5, 5) == 0, true, "target count stops repleni
 Assert(WorkItemPolicy.MissingCount(5, 8) == 0, true, "extras preserved");
 Assert(WorkItemPolicy.MissingCount(int.MaxValue, 0) == int.MaxValue, true, "maximum configured count supported");
 Assert(WorkItemPolicy.MissingCount(int.MaxValue, (long)int.MaxValue + 100) == 0, true, "multiple stacks cannot overflow count");
-Console.WriteLine($"PASS: {checks} eligibility, no-flood, tick, and JSON config checks.");
+foreach (var pair in UiText.Translations)
+{
+    Assert(pair.Value.Length == 2 && !string.IsNullOrWhiteSpace(pair.Value[0]) && !string.IsNullOrWhiteSpace(pair.Value[1]), true, "complete JP/CN coverage");
+    Assert(UiText.Get("EN", pair.Key) == pair.Key, true, "English unchanged");
+    Assert(UiText.Get("JP", pair.Key) == pair.Value[0], true, "Japanese selection");
+    Assert(UiText.Get("CN", pair.Key) == pair.Value[1], true, "Chinese selection");
+    Assert(UiText.Get("DE", pair.Key) == pair.Key, true, "unsupported language fallback");
+}
+Assert(UiText.Get(null, "Item ID") == "Item ID", true, "unset language fallback");
+Assert(UiText.Get("JP", null) == "", true, "empty status safe");
+Assert(UiText.Get("JP", "dreambug") == "dreambug", true, "item identifiers unchanged");
+Console.WriteLine($"PASS: {checks} eligibility, no-flood, tick, JSON config, and localization checks.");

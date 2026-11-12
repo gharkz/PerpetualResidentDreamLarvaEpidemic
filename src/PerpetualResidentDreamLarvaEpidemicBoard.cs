@@ -6,6 +6,7 @@ namespace PerpetualResidentDreamLarvaEpidemic
     [HarmonyPatch(typeof(BaseListPeople), nameof(BaseListPeople.OnInstantiate))]
     internal static class PerpetualResidentDreamLarvaEpidemicBoard
     {
+        private static string T(string text) => UiText.Get(Lang.langCode, text);
         private const string SlotId = "perpetualResidentDreamLarvaEpidemicSupply";
 
         [HarmonyPostfix]
@@ -36,9 +37,9 @@ namespace PerpetualResidentDreamLarvaEpidemic
             checkbox.SetTooltip(t =>
             {
                 t.note.Clear();
-                t.note.AddHeader("Allow item replenishment");
-                t.note.AddText(a.Name + ": " + (setting.Value ? "On" : "Off"));
-                t.note.AddText("Keep the configured item count topped up. Gender filters must also match. Existing items remain when turned off.");
+                t.note.AddHeader(T("Allow item replenishment"));
+                t.note.AddText(a.Name + ": " + (setting.Value ? T("On") : T("Off")));
+                t.note.AddText(T("Keep the configured item count topped up. Gender filters must also match. Existing items remain when turned off."));
                 t.note.Build();
             });
         }

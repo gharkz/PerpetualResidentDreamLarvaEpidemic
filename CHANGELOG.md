@@ -1,5 +1,13 @@
 # Change notes
 
+## 0.3.1 — 2026-11-12
+
+Added Japanese and Simplified Chinese settings, dialogs, tooltips, and status messages. The UI follows Elin's selected language automatically. No gameplay changes.
+
+設定、入力ダイアログ、ツールチップ、状態メッセージを日本語と簡体字中国語に対応させました。Elinの言語設定に自動で合わせます。ゲーム内の動作に変更はありません。
+
+为设置、输入窗口、提示和状态消息添加日语及简体中文翻译。界面自动跟随Elin的语言设置，游戏功能未变。
+
 ## 0.3.0 — 2026-11-12
 
 Initial release: keeps dream larva stocked for selected base residents and optional party allies. Choose the item and amount in Epidemic Config; changes save and apply immediately. Uses normal stacking and quietly skips full bags. Idea by Fresh 『Milk』.
