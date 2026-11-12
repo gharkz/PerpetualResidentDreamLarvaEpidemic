@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Title>Perpetual Resident Dream Larva Epidemic</Title>
+    <Authors>gharkz</Authors>
+    <Version>0.3.0</Version>
+    <ElinGamePath Condition="'$(ElinGamePath)' == ''">$(ELIN_DIR)</ElinGamePath>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath>dist/PerpetualResidentDreamLarvaEpidemic/</OutputPath>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Runtime.Serialization" />
+    <Compile Include="src/*.cs" />
+    <Reference Include="$(ElinGamePath)/Elin_Data/Managed/Elin.dll" Private="false" />
+    <Reference Include="$(ElinGamePath)/Elin_Data/Managed/Plugins.UI.dll" Private="false" />
+    <Reference Include="$(ElinGamePath)/Elin_Data/Managed/Plugins.BaseCore.dll" Private="false" />
+    <Reference Include="$(ElinGamePath)/Elin_Data/Managed/UnityEngine.dll" Private="false" />
+    <Reference Include="$(ElinGamePath)/Elin_Data/Managed/UnityEngine.CoreModule.dll" Private="false" />
+    <Reference Include="$(ElinGamePath)/Elin_Data/Managed/UnityEngine.UI.dll" Private="false" />
+    <Reference Include="$(ElinGamePath)/Elin_Data/Managed/UnityEngine.TextRenderingModule.dll" Private="false" />
+    <Reference Include="$(ElinGamePath)/BepInEx/core/BepInEx.Core.dll" Private="false" />
+    <Reference Include="$(ElinGamePath)/BepInEx/core/BepInEx.Unity.dll" Private="false" />
+    <Reference Include="$(ElinGamePath)/BepInEx/core/0Harmony.dll" Private="false" />
+    <None Include="package.xml" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="preview.jpg" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

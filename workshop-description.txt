@@ -1,0 +1,53 @@
+[quote]
+Shout out to Fresh 『Milk』! This mod is for them, and this idea is there's, I just spun it up real quick as a mod. Now all your residents perpetually have dream bugs in their inventory, or rather, just the one by default!
+
+Keeps dream larva in your base residents' bags and replaces any that are used up. You can include party allies too.
+
+Open your character sheet and select the last tab, Epidemic Config. Choose the item, amount, and who gets it. Changes save and apply right away. No restart needed.
+
+Defaults: one dream larva each; female residents selected; party allies included; player included at home. Replenishment starts on. Gender choices also apply to party allies. Turn individual residents off on the resident board.
+
+Full bags are quietly skipped unless the items can stack. Turning the mod off leaves existing items in place. Only the area you're in is supplied.
+
+Settings save automatically in Elin's BepInEx/config folder. Item choices use gharkz.elin.perpetualresidentdreamlarvaepidemic.json, created on first launch. You don't need to edit it.
+
+Japanese and Simplified Chinese translations: Codex (AI).
+
+Source: https://github.com/gharkz/PerpetualResidentDreamLarvaEpidemic
+[/quote]
+
+[quote]
+Fresh 『Milk』さんに感謝！このMODはその方のために作ったもので、アイデアもその方のものです。さっとMODにしてみました。これで住民の持ち物には夢の幼虫がずっと入っています。初期設定では1つずつです！
+
+拠点の住民に夢の幼虫を持たせ、使い切った分を補充します。仲間も対象にできます。
+
+キャラクターシートを開き、最後のタブ「Epidemic Config」を選んでください。アイテム、個数、対象を選ぶだけ。変更はすぐに保存・反映され、再起動は不要です。
+
+初期設定：夢の幼虫を1つずつ、女性の住民が対象、仲間も対象、拠点ではプレイヤーも対象。補充は最初からオンです。性別の選択は仲間にも適用されます。住民ボードで個別に対象から外せます。
+
+持ち物が満杯なら、スタックできる場合を除いて静かにスキップします。MODをオフにしても持っているアイテムは残ります。現在いるエリアだけが対象です。
+
+設定はElinのBepInEx/configフォルダに自動保存されます。アイテムの設定ファイルはgharkz.elin.perpetualresidentdreamlarvaepidemic.jsonで、初回起動時に作成されます。手動編集は不要です。
+
+日本語・簡体字中国語訳：Codex（AI）。
+
+ソースコード：https://github.com/gharkz/PerpetualResidentDreamLarvaEpidemic
+[/quote]
+
+[quote]
+感谢Fresh 『Milk』！这个MOD是为这位朋友做的，点子也是对方的，我只是很快把它做成了MOD。现在，居民的背包里会一直有梦之幼虫——默认每人一个！
+
+让基地居民的背包里一直有梦之幼虫，用完就补充。也可以让队友获得补充。
+
+打开角色面板，选择最后一个标签页“Epidemic Config”。选择物品、数量和对象即可。更改立即保存并生效，无需重启。
+
+默认设置：每人一个梦之幼虫；选中女性居民；包括队友；在基地时也包括玩家。补充功能默认开启。性别选择也适用于队友。可在居民面板中单独排除某位居民。
+
+背包已满时会安静跳过，能堆叠的物品除外。关闭MOD不会移除已有物品。只补充你当前所在区域的人物。
+
+设置自动保存在Elin的BepInEx/config文件夹中。物品设置文件为gharkz.elin.perpetualresidentdreamlarvaepidemic.json，首次启动时自动创建，无需手动编辑。
+
+日语和简体中文翻译：Codex（AI）。
+
+源代码：https://github.com/gharkz/PerpetualResidentDreamLarvaEpidemic
+[/quote]
