@@ -1,6 +1,6 @@
 # Perpetual Resident Dream Larva Epidemic
 
-Shout out to Fresh 『Milk』! This mod is for them, and this idea is there's, I just spun it up real quick as a mod. Now all your residents perpetually have dream bugs in their inventory, or rather, just the one by default!
+Shout out to Fresh 『Milk』! This mod is for them, and this idea is theirs, I just spun it up real quick as a mod. Now all your residents perpetually have dream bugs in their inventory, or rather, just the one by default!
 
 **Install:** [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3838374920)
 
