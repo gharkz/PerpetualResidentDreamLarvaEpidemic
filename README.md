@@ -2,6 +2,8 @@
 
 Shout out to Fresh 『Milk』! This mod is for them, and this idea is there's, I just spun it up real quick as a mod. Now all your residents perpetually have dream bugs in their inventory, or rather, just the one by default!
 
+**Install:** [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3838374920)
+
 Keeps dream larva in your base residents' bags and replaces any that are used up. You can include party allies too.
 
 Open your character sheet and select the last tab, Epidemic Config. Choose the item, amount, and who gets it. Changes save and apply right away. No restart needed.
@@ -22,6 +24,8 @@ Source: https://github.com/gharkz/PerpetualResidentDreamLarvaEpidemic
 
 Fresh 『Milk』さんに感謝！このMODはその方のために作ったもので、アイデアもその方のものです。さっとMODにしてみました。これで住民の持ち物には夢の幼虫がずっと入っています。初期設定では1つずつです！
 
+**導入：** [Steamワークショップ](https://steamcommunity.com/sharedfiles/filedetails/?id=3838374920)
+
 拠点の住民に夢の幼虫を持たせ、使い切った分を補充します。仲間も対象にできます。
 
 キャラクターシートを開き、最後のタブ「Epidemic Config」を選んでください。アイテム、個数、対象を選ぶだけ。変更はすぐに保存・反映され、再起動は不要です。
@@ -41,6 +45,8 @@ Fresh 『Milk』さんに感謝！このMODはその方のために作ったも�
 ## 简体中文
 
 感谢Fresh 『Milk』！这个MOD是为这位朋友做的，点子也是对方的，我只是很快把它做成了MOD。现在，居民的背包里会一直有梦之幼虫——默认每人一个！
+
+**安装：** [Steam创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3838374920)
 
 让基地居民的背包里一直有梦之幼虫，用完就补充。也可以让队友获得补充。
 
