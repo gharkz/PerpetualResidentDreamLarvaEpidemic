@@ -4,7 +4,7 @@
     <LangVersion>latest</LangVersion>
     <Title>Perpetual Resident Dream Larva Epidemic</Title>
     <Authors>gharkz</Authors>
-    <Version>0.3.3</Version>
+    <Version>0.3.4</Version>
     <ElinGamePath Condition="'$(ElinGamePath)' == ''">X:/SteamLibrary/steamapps/common/Elin</ElinGamePath>
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
@@ -34,6 +34,7 @@
     <Reference Include="$(ElinGamePath)/BepInEx/core/BepInEx.Unity.dll" Private="false" />
     <Reference Include="$(ElinGamePath)/BepInEx/core/0Harmony.dll" Private="false" />
     <None Include="package.xml" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="LICENSE" CopyToOutputDirectory="PreserveNewest" />
     <None Include="preview.jpg" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 </Project>
