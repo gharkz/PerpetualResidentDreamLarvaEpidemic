@@ -18,7 +18,7 @@ namespace PerpetualResidentDreamLarvaEpidemic
         internal int ItemCount { get; private set; } = 1;
         public const string Id = "gharkz.elin.perpetualresidentdreamlarvaepidemic";
         public const string DisplayName = "Perpetual Resident Dream Larva Epidemic";
-        public const string Version = "0.3.4";
+        public const string Version = "0.3.5";
 
         internal static PerpetualResidentDreamLarvaEpidemicPlugin Instance;
         internal ConfigEntry<bool> Female, Male, Unknown, SupplyEnabled, IncludePlayer;
