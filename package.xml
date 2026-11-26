@@ -9,19 +9,23 @@
   <description>[quote]
 Shout out to Fresh 『Milk』! This mod is for them, and this idea is theirs, I just spun it up real quick as a mod. Now all your residents perpetually have dream bugs in their inventory, or rather, just the one by default!
 
-Keeps dream larva in your base residents&apos; bags and replaces any that are used up. You can include party allies too.
+Keeps dream larva in your base residents' bags and replaces any that are used up. You can include party allies too.
 
 Open your character sheet and select the last tab, Epidemic Config. Choose the item, amount, and who gets it. Changes save and apply right away. No restart needed.
 
 Defaults: one dream larva each; female residents selected; party allies included; player included at home. Replenishment starts on. Gender choices also apply to party allies. Turn individual residents off on the resident board.
 
-Full bags are quietly skipped unless the items can stack. Turning the mod off leaves existing items in place. Only the area you&apos;re in is supplied.
+Full bags are quietly skipped unless the items can stack. Turning the mod off leaves existing items in place. Only the area you're in is supplied.
 
-Settings save automatically in Elin&apos;s BepInEx/config folder. Item choices use gharkz.elin.perpetualresidentdreamlarvaepidemic.json, created on first launch. You don&apos;t need to edit it.
+Settings save automatically in Elin's BepInEx/config folder. Item choices use gharkz.elin.perpetualresidentdreamlarvaepidemic.json, created on first launch. You don't need to edit it.
 
 Japanese and Simplified Chinese translations: Codex (AI).
 
+Disclosure: I used Codex (AI) as a coding and translation assistant while building this mod. The Workshop preview image was also made with Codex's help. The design, testing and final decisions are my own.
+
 Source: https://github.com/gharkz/PerpetualResidentDreamLarvaEpidemic
+
+Found a problem? System menu > Mod > Bug reports > Perpetual Resident Dream Larva Epidemic: copy the report and post it at https://github.com/gharkz/elin-mods-support/issues
 [/quote]
 
 [quote]
@@ -39,7 +43,11 @@ Fresh 『Milk』さんに感謝！このMODはその方のために作ったも�
 
 日本語・簡体字中国語訳：Codex（AI）。
 
+開示: このModの制作では、コーディングと翻訳の補助にCodex(AI)を使用しました。ワークショップのプレビュー画像もCodexの補助で作成しました。設計・テスト・最終判断は私自身が行いました。
+
 ソースコード：https://github.com/gharkz/PerpetualResidentDreamLarvaEpidemic
+
+不具合の報告: システムメニュー > Mod > Bug reports > Perpetual Resident Dream Larva Epidemic でレポートをコピーし、https://github.com/gharkz/elin-mods-support/issues に投稿してください。
 [/quote]
 
 [quote]
@@ -57,7 +65,11 @@ Fresh 『Milk』さんに感謝！このMODはその方のために作ったも�
 
 日语和简体中文翻译：Codex（AI）。
 
+说明: 制作本模组时，我使用了Codex(AI)作为编程与翻译助手。创意工坊预览图也是在Codex的协助下制作的。设计、测试与最终决定均由我本人完成。
+
 源代码：https://github.com/gharkz/PerpetualResidentDreamLarvaEpidemic
+
+问题反馈: 系统菜单 > Mod > Bug reports > Perpetual Resident Dream Larva Epidemic,复制报告后发布到 https://github.com/gharkz/elin-mods-support/issues 。
 [/quote]</description>
   <tags>General,QoL,Utility,english,japanese,schinese</tags>
 </Meta>

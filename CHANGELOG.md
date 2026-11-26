@@ -1,3 +1,17 @@
+# Changelog
+
+## 0.3.3
+
+Perpetual Resident Dream Larva Epidemic 0.3.3
+Added System menu > Mod > Bug reports > Perpetual Resident Dream Larva Epidemic: a window that copies a bug report (versions, enabled mods, log) to post at https://github.com/gharkz/elin-mods-support/issues
+
+日本語
+システムメニュー > Mod > Bug reports > Perpetual Resident Dream Larva Epidemic を追加。不具合報告(バージョン、有効なMod、ログ)をコピーして https://github.com/gharkz/elin-mods-support/issues に投稿できます。
+
+简体中文
+新增 系统菜单 > Mod > Bug reports > Perpetual Resident Dream Larva Epidemic:可复制问题报告(版本、已启用模组、日志)并发布到 https://github.com/gharkz/elin-mods-support/issues 。
+
+
 # Change notes
 
 ## 0.3.2 — 2026-11-12

@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace PerpetualResidentDreamLarvaEpidemic
 {
-    [BepInPlugin(Id, DisplayName, "0.3.2")]
+    [BepInPlugin(Id, DisplayName, Version)]
     public sealed class PerpetualResidentDreamLarvaEpidemicPlugin : BaseUnityPlugin
     {
         // Default for generated JSON and fallback when the configured ID cannot be used.
@@ -18,6 +18,7 @@ namespace PerpetualResidentDreamLarvaEpidemic
         internal int ItemCount { get; private set; } = 1;
         public const string Id = "gharkz.elin.perpetualresidentdreamlarvaepidemic";
         public const string DisplayName = "Perpetual Resident Dream Larva Epidemic";
+        public const string Version = "0.3.3";
 
         internal static PerpetualResidentDreamLarvaEpidemicPlugin Instance;
         internal ConfigEntry<bool> Female, Male, Unknown, SupplyEnabled, IncludePlayer;
@@ -47,7 +48,13 @@ namespace PerpetualResidentDreamLarvaEpidemic
             SupplyEnabled.SettingChanged += (_, __) => { clock.Reset(); SupplyError = null; itemValidated = false; };
             harmony = new Harmony(Id);
             harmony.PatchAll(typeof(PerpetualResidentDreamLarvaEpidemicPlugin).Assembly);
-            Logger.LogInfo(DisplayName + " 0.3.2 loaded. Item inventory replenishment only.");
+            Support.BugReport.Init(DisplayName, Id, Version, Id, () => new[]
+            {
+                "Supply: " + (SupplyEnabled.Value ? "on" : "off") + ", item " + ItemId + " x" + ItemCount,
+                "Recipients: female " + Female.Value + ", male " + Male.Value + ", unknown " + Unknown.Value + ", player " + IncludePlayer.Value + ", party allies " + IncludePartyAllies,
+                "Supply error: " + (SupplyError ?? "none"),
+            });
+            Logger.LogInfo(DisplayName + " " + Version + " loaded. Item inventory replenishment only.");
         }
 
         private void Update()
@@ -58,6 +65,7 @@ namespace PerpetualResidentDreamLarvaEpidemic
                 // Pause after a failure instead of retrying creation every frame.
                 SupplyError = "Replenishment paused after an error. See BepInEx log.";
                 Logger.LogError(ex);
+                Support.BugReport.Note(ex);
             }
             if (Time.unscaledTime < nextRefresh) return;
             nextRefresh = Time.unscaledTime + 0.5f;
